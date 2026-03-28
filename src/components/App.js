@@ -1,12 +1,18 @@
 
 import React from "react";
 import './../styles/App.css';
+import { BrowserRouter, Route, Routes } from "react-router";
+import UserList from "./UserList";
+import UserDetails from "./UserDetails";
 
 const App = () => {
   return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route to="/" element={<UserList />} />
+        <Route to="/users/:id" element={<UserDetails />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
